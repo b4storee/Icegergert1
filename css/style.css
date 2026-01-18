@@ -1,0 +1,144 @@
+
+/* style.css - Icegergert fan site */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  background: url("../img/bg.jpg") center center / cover no-repeat fixed;
+  color: #eaeaea;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+.container {
+  width: 92%;
+  max-width: 1100px;
+  margin: 24px auto;
+  backdrop-filter: blur(4px);
+}
+
+header {
+  background: rgba(0,0,0,0.6);
+  padding: 18px 10px;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.6);
+}
+
+nav { text-align: center; }
+nav a {
+  color: #7efcff;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: 700;
+  position: relative;
+  padding: 6px 4px;
+  transition: color .25s ease;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg,#7efcff,#66b3ff);
+  transition: width .25s ease;
+  border-radius: 2px;
+}
+nav a:hover { color: #fff; }
+nav a:hover::after { width: 100%; }
+
+main.card {
+  background: linear-gradient(180deg, rgba(0,0,0,0.5), rgba(0,0,0,0.35));
+  padding: 26px;
+  margin-top: 18px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+  animation: fadeIn .9s ease both;
+}
+
+h1, h2 { text-align: center; color: #fff; margin-top: 0; }
+h1 { font-size: 2.05rem; letter-spacing: 0.6px; animation: glowText 3s infinite; }
+h2 { font-size: 1.4rem; margin-bottom: 12px; color: #dfefff; }
+
+p { line-height: 1.6; color: #e6eef8; }
+.lead { font-size: 1.05rem; opacity: .95; }
+
+.artist-photo {
+  display: block;
+  margin: 18px auto;
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6), 0 0 18px rgba(126,252,255,0.08) inset;
+  transition: transform .45s ease, box-shadow .45s ease;
+}
+.artist-photo:hover { transform: scale(1.03); box-shadow: 0 12px 44px rgba(102,179,255,0.18); }
+
+.stats {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 14px 0 20px;
+  flex-wrap: wrap;
+}
+.badge {
+  background: rgba(255,255,255,0.03);
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.04);
+  font-weight: 700;
+  color: #aeefff;
+}
+
+.section { margin: 18px 0; padding: 12px; border-radius: 10px; background: rgba(0,0,0,0.25); }
+
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+  gap: 14px;
+  margin-top: 12px;
+}
+.album {
+  background: rgba(0,0,0,0.35);
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.album:hover { transform: translateY(-6px); box-shadow: 0 14px 36px rgba(0,0,0,0.45); }
+
+.footer {
+  text-align: center;
+  margin: 18px 0 60px;
+  color: #cfd8e6;
+  font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes glowText {
+  0% { text-shadow: 0 0 6px rgba(126,252,255,0.15); }
+  50% { text-shadow: 0 0 24px rgba(102,179,255,0.28); }
+  100% { text-shadow: 0 0 6px rgba(126,252,255,0.15); }
+}
+
+/* Responsive tweak */
+@media (max-width:720px) {
+  .artist-photo { width: 60%; height: auto; }
+  .container { width: 96%; }
+}
+
+a.button {
+  display: inline-block;
+  background: linear-gradient(90deg,#66b3ff,#7efcff);
+  color: #00132a;
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 800;
+  box-shadow: 0 6px 16px rgba(102,179,255,0.12);
+}
